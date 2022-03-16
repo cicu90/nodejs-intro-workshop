@@ -15,9 +15,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/assembler-school/nodejs-intro-workshop.git"
+    "url": "git+https://github.com/assembler-school/nodejs-intro-workshop.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.17.3"
+  },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
@@ -29,5 +31,9 @@
     "jest": "^26.6.3",
     "nodemon": "^2.0.6",
     "prettier": "2.2.1"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/assembler-school/nodejs-intro-workshop/issues"
+  },
+  "homepage": "https://github.com/assembler-school/nodejs-intro-workshop#readme"
 }

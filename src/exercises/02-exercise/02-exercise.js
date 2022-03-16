@@ -1,3 +1,5 @@
+const path = require("path");
+const fs = require("fs");
 /**
  * 1. Use the `path.resolve` method to build the path
  *    of the file named "names.txt" in the current folder
@@ -21,7 +23,28 @@
  *        with the resulting string with all the names in upper case
  *        only after writing the contents to the disk.
  */
-function uppercase(callback) {}
+function uppercase(callback) {
+    const FILE_PATH:  path.resolve(__dirname, "names.txt"); //se unen el directorio con el que nos piden
+
+    fs.readFile(FILE_PATH, "utf8", (console.error, data) => {
+        if(error){
+            throw error;
+
+            // cconsole.log("data", data)
+            
+            const splitNames = data
+            .split(";")
+            .map((name) => name.toUpperCase())
+            .join(";");
+
+            fs.writeFile(FILE_PATH, upperCaseNames, (error) => {
+                if (error) throw error;
+                
+                callback(upperCaseNames);
+            });
+        }
+    })
+}
 
 /**
  * 3. Export the `uppercase` function as a named export
@@ -29,4 +52,4 @@ function uppercase(callback) {}
  * @hint
  * { a: a }
  */
-module.exports = {};
+module.exports = { uppercase: uppercase };
